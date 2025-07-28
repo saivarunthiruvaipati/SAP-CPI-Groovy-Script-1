@@ -1,0 +1,4 @@
+def body = new groovy.json.JsonSlurper().parseText(message.getBody(String))
+def customerId = body.customer.id
+message.setProperty("customerId", customerId)
+return message
